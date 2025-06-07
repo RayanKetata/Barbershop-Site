@@ -1,0 +1,71 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.navbar.scrolled {
+  padding: 10px 30px;
+  background-color: #111;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+
+.logo-img {
+  height: 60px;
+  width: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  will-change: transform;
+}
+
+.nav-links li:hover {
+  transform: scale(1.05);
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px; /* set the same padding here */
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+
+.nav-links a:hover {
+  color: black;
+  transform: scale(1.03); /* optional: smooth bounce */
+}
+

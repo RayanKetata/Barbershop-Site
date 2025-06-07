@@ -1,0 +1,12 @@
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: url('/BarberShop.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: sans-serif;
+  background-attachment: scroll;
+}
+.App {
+  padding-top: 80px;
+}

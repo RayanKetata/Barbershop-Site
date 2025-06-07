@@ -1,0 +1,28 @@
+.home {
+  padding: 100px 20px;
+  text-align: center;
+  min-height: 100vh;
+  color: black;
+}
+
+
+.cta-button {
+  padding: 10px 30px;
+  margin-top: 20px;
+  background-color: #353c42;
+  border: 1px solid #0a0909;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.cta-button:hover {
+  background-color: #1957df;
+  color: white;
+  transform: scale(1.05);
+  transition: background-color 0.1s ease, transform 0.3s ease;
+}
+.contact-text {
+  margin-top: 100px;
+  font-weight: bold;
+}
+

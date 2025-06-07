@@ -1,0 +1,45 @@
+.body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+}
+.cutz-section {
+  padding: 60px 30px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+}
+
+.cutz-card {
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  padding: 15px;
+  width: 200px;
+  min-width: 200px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.cutz-card:hover {
+  transform: scale(1.05);
+}
+
+.cutz-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.cutz-info {
+  margin-top: 10px;
+  font-weight: bold;
+}
