@@ -1,0 +1,129 @@
+.booking-section {
+  padding: 60px 20px;
+  background: #fff;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 650px;
+  margin: 40px auto;
+  background: #f6f6f6;
+  padding: 32px 24px;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.booking-form select,
+.booking-form input[type="date"] {
+  color: #fff;
+  background: #222;
+  border: 1.5px solid #111;
+  border-radius: 7px;
+  padding: 16px 12px;
+  font-size: 1.08rem;
+  font-family: inherit;
+  margin-bottom: 8px;
+  transition: border 0.2s;
+}
+
+.booking-form select option {
+  color: #222;
+  background: #fff;
+}
+
+.booking-form input::placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+
+.slot-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.slot-group > div {
+  flex: 1 1 30%;
+  min-width: 120px;
+}
+
+.slot-group h4 {
+  color: #ccc;
+  margin-bottom: 8px;
+  font-size: 1.04rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.slot-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.slot-list button {
+  padding: 10px 17px;
+  border: 1.2px solid #222;
+  background: #fff;
+  color: #222;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.99rem;
+  font-weight: 500;
+  transition: background 0.18s, color 0.18s, border 0.18s, box-shadow 0.14s;
+  opacity: 1;
+  outline: none;
+}
+.slot-list button:hover {
+  background: #f0f0f0;
+  color: #111;
+  border-color: #111;
+}
+
+.slot-list button.active,
+.slot-list button:focus {
+  background: #222;
+  color: #fff;
+  border: 2px solid #111;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.cta-button {
+  padding: 16px 0;
+  background: #111;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.16rem;
+  cursor: pointer;
+  margin-top: 18px;
+  transition: background 0.18s;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.cta-button:hover {
+  background: #333;
+}
+
+@media (max-width: 800px) {
+  .booking-form {
+    padding: 20px 6px;
+    gap: 16px;
+  }
+  .slot-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .slot-group > div {
+    min-width: 0;
+  }
+}
