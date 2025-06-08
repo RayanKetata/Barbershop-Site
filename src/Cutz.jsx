@@ -1,10 +1,11 @@
 import React from "react";
 import "./Cutz.css";
+
 const services = [
-  { title: "Taper Fade", price: "$20", img: "/Taper.jpg" },
-  { title: "Regular Haircut", price: "$25", img: "/Fades.jpg" },
-  { title: "Beard Lineup/Shapeup", price: "$15", img: "/Beard.jpg" },
-  { title: "Kidz Cut", price: "$18", img: "/Kids.jpg" },
+  { title: "Taper Fade", price: "$20", img: "./Taper.jpg" },
+  { title: "Regular Haircut", price: "$25", img: "./Fades.jpg" },
+  { title: "Beard Lineup/Shapeup", price: "$15", img: "./Beard.jpg" },
+  { title: "Kidz Cut", price: "$18", img: "./Kids.jpg" },
 ];
 
 const Cutz = () => {
@@ -24,5 +25,7 @@ const Cutz = () => {
       </div>
     </section>
   );
-}
+};
+
 export default Cutz;
+

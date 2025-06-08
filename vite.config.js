@@ -5,6 +5,8 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 export default defineConfig({
   plugins: [react()],
-  base: isProduction ? '/Barbershop-Site/' : '/',
+  base: isProduction ? '/Barbershop-Site/' : '/', 
 });
+
+
 
