@@ -30,15 +30,15 @@ function get24Hour(slot) {
 
 const morning = slots.filter(slot => {
   const t = get24Hour(slot);
-  return t >= 8 && t < 12; // 8:00–11:30 AM
+  return t >= 8 && t < 12;
 });
 const midday = slots.filter(slot => {
   const t = get24Hour(slot);
-  return t >= 12 && t < 16; // 12:00–4:30 PM
+  return t >= 12 && t < 16; 
 });
 const evening = slots.filter(slot => {
   const t = get24Hour(slot);
-  return t >= 16 && t < 20; // 5:00–7:30 PM
+  return t >= 16 && t < 20; 
 });
 
 const Booking = () => {
@@ -49,7 +49,7 @@ const Booking = () => {
     name: "",
     email: "",
   });
-  const navigate = useNavigate(); // <-- Add this here
+  const navigate = useNavigate(); 
 
   const handleChange = e => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -69,15 +69,13 @@ const Booking = () => {
       `Booking confirmed!\nService: ${form.service}\nDate: ${form.date}\nTime: ${form.time}\nName: ${form.name}\nEmail: ${form.email || "(not provided)"}`
     );
     setForm({ service: "", date: "", time: "", name: "", email: "" });
-    // setSelectedDate(null); // Only if you have this state
-    navigate("/"); // Redirect to homepage
+    navigate("/"); 
   };
 
   return (
     <section id="book" className="booking-section">
       <h2>Book Your Cut</h2>
       <form className="booking-form" onSubmit={handleSubmit}>
-        {/* Haircut type */}
         <select
           name="service"
           value={form.service}
@@ -85,13 +83,12 @@ const Booking = () => {
           required
         >
           <option value="">Type of haircut</option>
-          <option value="Taper">Taper</option>
-          <option value="Fade">Fade</option>
-          <option value="Beard Lineup">Beard Lineup</option>
-          <option value="Shave">Shave</option>
+          <option value="Taper">Taper Fade</option>
+          <option value="Fade">Regular Haircut</option>
+          <option value="Beard Lineup">Beard Lineup/Shapeup</option>
+          <option value="Shave">Kidz Cut</option>
         </select>
 
-        {/* Date picker */}
         <input
           name="date"
           type="date"
@@ -100,7 +97,6 @@ const Booking = () => {
           required
         />
 
-        {/* Time slots */}
         <div className="slot-group">
           <div>
             <h4>Morning</h4>
@@ -148,7 +144,6 @@ const Booking = () => {
             </div>
           </div>
         </div>
-        {/* Name and email */}
         <input
          type="text"
         name="name"

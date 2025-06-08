@@ -164,7 +164,6 @@
   position: relative;
 }
 
-/* Optional: Make sure the native icon is still clickable */
 .booking-form input[type="date"]::-webkit-calendar-picker-indicator {
   opacity: 0;
   z-index: 2;

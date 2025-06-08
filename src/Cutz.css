@@ -1,45 +1,58 @@
-.body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  height: 100vh;
-}
 .cutz-section {
-  padding: 60px 30px;
+  padding: 80px 60px; 
   text-align: center;
   background-color: #fff;
+  color: #000;
+}
+
+.cutz-section h2 {
+  font-size: 40px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .card-container {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+  gap: 40px; 
+  justify-content: center;
+  align-items: stretch;
 }
 
 .cutz-card {
-  background-color: #f0f0f0;
-  border-radius: 12px;
-  padding: 15px;
-  width: 200px;
-  min-width: 200px;
-  transition: transform 0.3s ease;
-  cursor: pointer;
+  background-color: #f8f8f8;
+  border-radius: 16px;
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  color: #000;
 }
 
 .cutz-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .cutz-card img {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
+  height: 220px; 
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 .cutz-info {
-  margin-top: 10px;
-  font-weight: bold;
+  margin-top: 16px;
 }
+
+.cutz-info h3 {
+  font-size: 20px;
+  margin: 8px 0;
+}
+
+.cutz-info p {
+  font-size: 18px;
+  color: #000;
+}
+
+

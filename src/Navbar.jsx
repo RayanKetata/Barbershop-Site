@@ -20,7 +20,11 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <img src="/BarberShopLogo.png" alt="Logo" className="logo-img" />
       <ul className="nav-links">
-        <li><Link to="/"><FaHome /> Home</Link></li>
+        <li>
+          <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+            <FaHome /> Home
+          </Link>
+        </li>
         <li><a href="#cutz"><GiScissors /> Cutz</a></li>
        <li><Link to="/booking"><FaCalendarAlt /> Book</Link></li>
        <li><a href="#contact"><FaPhone /> Contact</a></li>

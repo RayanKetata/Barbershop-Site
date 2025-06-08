@@ -1,28 +1,55 @@
 .home {
-  padding: 100px 20px;
-  text-align: center;
-  min-height: 100vh;
-  color: black;
+  height: 100vh;
+  width: 100%;
+  background-image: url("/BarberShop.jpg"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.overlay {
+  background: rgba(0, 0, 0, 0.6); 
+  color: #fff;
+  padding: 40px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.overlay h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.overlay h4 {
+  font-size: 20px;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
 
 .cta-button {
-  padding: 10px 30px;
-  margin-top: 20px;
-  background-color: #353c42;
-  border: 1px solid #0a0909;
-  border-radius: 5px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 12px 48px; 
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
   cursor: pointer;
-  font-weight: bold;
+  transition: all 0.3s ease;
+  min-width: 200px; 
 }
+
 .cta-button:hover {
-  background-color: #1957df;
-  color: white;
-  transform: scale(1.05);
-  transition: background-color 0.1s ease, transform 0.3s ease;
+  background-color: #000;
+  color: #fff;
 }
-.contact-text {
-  margin-top: 100px;
-  font-weight: bold;
-}
+
+
 
