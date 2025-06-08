@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import Cutz from "./Cutz";
+import Contact from "./Contact";
 import Booking from "./Booking";
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
           <>
             <Home />
             <Cutz />
+            <Contact />
           </>
         } />
         <Route path="/booking" element={<Booking />} />
