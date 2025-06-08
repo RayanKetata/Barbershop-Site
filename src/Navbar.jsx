@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-      <img src="/BarberShopLogo.png" alt="Logo" className="logo-img" />
+      <img src={`${import.meta.env.BASE_URL}BarberShopLogo.png`} alt="Logo" className="logo-img" />
       <ul className="nav-links">
         <li>
           <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>

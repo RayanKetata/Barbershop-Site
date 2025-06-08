@@ -2,10 +2,10 @@ import React from "react";
 import "./Cutz.css";
 
 const services = [
-  { title: "Taper Fade", price: "$20", img: "./Taper.jpg" },
-  { title: "Regular Haircut", price: "$25", img: "./Fades.jpg" },
-  { title: "Beard Lineup/Shapeup", price: "$15", img: "./Beard.jpg" },
-  { title: "Kidz Cut", price: "$18", img: "./Kids.jpg" },
+  { title: "Taper Fade", price: "$20", img: `${import.meta.env.BASE_URL}Taper.jpg` },
+  { title: "Regular Haircut", price: "$25", img: `${import.meta.env.BASE_URL}Fades.jpg` },
+  { title: "Beard Lineup/Shapeup", price: "$15", img: `${import.meta.env.BASE_URL}Beard.jpg` },
+  { title: "Kidz Cut", price: "$18", img: `${import.meta.env.BASE_URL}Kids.jpg` },
 ];
 
 const Cutz = () => {
