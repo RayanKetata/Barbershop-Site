@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "./Booking.css";
+import { FaCalendarAlt } from "react-icons/fa";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from "react-router-dom";
 
-// Generate 30-min slots from 8:00 AM to 8:00 PM
 function generateTimeSlots(start = 8, end = 20, interval = 30) {
   const slots = [];
   for (let hour = start; hour < end; hour++) {
@@ -15,22 +18,38 @@ function generateTimeSlots(start = 8, end = 20, interval = 30) {
   return slots;
 }
 
-// Split slots into morning, mid-day, evening
 const slots = generateTimeSlots();
-const morning = slots.filter(t => t.includes("AM"));
-const midday = slots.filter(
-  t => t.includes("PM") && parseInt(t) < 4
-); // 12:00 PM–3:30 PM
-const evening = slots.filter(
-  t => t.includes("PM") && parseInt(t) >= 4
-); // 4:00 PM–7:30 PM
+
+function get24Hour(slot) {
+  let [time, ampm] = slot.split(" ");
+  let [hour, min] = time.split(":").map(Number);
+  if (ampm === "PM" && hour !== 12) hour += 12;
+  if (ampm === "AM" && hour === 12) hour = 0;
+  return hour + min / 60;
+}
+
+const morning = slots.filter(slot => {
+  const t = get24Hour(slot);
+  return t >= 8 && t < 12; // 8:00–11:30 AM
+});
+const midday = slots.filter(slot => {
+  const t = get24Hour(slot);
+  return t >= 12 && t < 16; // 12:00–4:30 PM
+});
+const evening = slots.filter(slot => {
+  const t = get24Hour(slot);
+  return t >= 16 && t < 20; // 5:00–7:30 PM
+});
 
 const Booking = () => {
   const [form, setForm] = useState({
     service: "",
     date: "",
     time: "",
+    name: "",
+    email: "",
   });
+  const navigate = useNavigate(); // <-- Add this here
 
   const handleChange = e => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -42,14 +61,16 @@ const Booking = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (!form.service || !form.date || !form.time) {
-      alert("Please select service, date, and time.");
+    if (!form.service || !form.date || !form.time || !form.name) {
+      alert("Please fill in all required fields (Service, Time, Date and Name).");
       return;
     }
-    alert(
-      `Booking confirmed!\n\nService: ${form.service}\nDate: ${form.date}\nTime: ${form.time}`
+    window.alert(
+      `Booking confirmed!\nService: ${form.service}\nDate: ${form.date}\nTime: ${form.time}\nName: ${form.name}\nEmail: ${form.email || "(not provided)"}`
     );
-    setForm({ service: "", date: "", time: "" });
+    setForm({ service: "", date: "", time: "", name: "", email: "" });
+    // setSelectedDate(null); // Only if you have this state
+    navigate("/"); // Redirect to homepage
   };
 
   return (
@@ -127,7 +148,22 @@ const Booking = () => {
             </div>
           </div>
         </div>
-
+        {/* Name and email */}
+        <input
+         type="text"
+        name="name"
+        placeholder="Full Name (required)"
+        value={form.name}
+        onChange={handleChange}
+        required
+        />
+        <input
+         type="email"
+        name="email"
+        placeholder="Email (optional)"
+        value={form.email}
+        onChange={handleChange}
+        />
         <button type="submit" className="cta-button">Book Now</button>
       </form>
     </section>

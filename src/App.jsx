@@ -1,16 +1,24 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Navbar";
 import Home from "./Home";
-import "./App.css";
 import Cutz from "./Cutz";
+import Booking from "./Booking";
 
 const App = () => {
   return (
-    <div className="App">
+    <Router>
       <Navbar />
-      <Home />
-      <Cutz />
-    </div>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Home />
+            <Cutz />
+          </>
+        } />
+        <Route path="/booking" element={<Booking />} />
+      </Routes>
+    </Router>
   );
 };
 
